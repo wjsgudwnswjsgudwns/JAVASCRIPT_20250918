@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전개구문</title>
+</head>
+<body>
+    <script>
+        let arr1 = [10,20,30]; 
+        let arr2 = [50,60,70];
+        console.log(...arr1); // 10 20 30 -> 배열이 아닌 각각의 요소로 출력
+        console.log(arr1); // [10, 20, 30] -> 배열로 출력
+
+        let arr12 = [...arr1, ...arr2]; // 두 배열을 하나로 합침
+        let arr11 = [...arr1]; // arr1 배열을 복사
+        console.log(arr1 === arr11) // false, 참조값이 다름
+
+        // 함수에 인수로 전달할 때
+        function add(x,y,z) {
+            return x + y + z;
+        }
+
+        console.log(add(...arr2));
+
+        //배열 구조 분해 할당 예제
+        
+        let numbers = [10,20,30,40];
+        let [one, ,three, ] = numbers;
+        console.log(one,three);
+
+        let userMap = {name:"홍길동", age:25}
+        let {userName,userAge} = userMap;
+        
+        const users = {
+            "userA" : [50,60,100],
+            "userB" : [80,90,70],
+            "userC" : [75,80,90]
+        }
+
+        const {userA,userB} = users;
+        const arr = [...userA,...userB];
+        let sum = 0;
+        for(var i=0;i<arr.length;i++) {
+            sum += arr[i];
+        }
+        document.write(`userA와 userB의 점수 합계는 ${sum}점.`);
+
+    </script>
+</body>
+</html>

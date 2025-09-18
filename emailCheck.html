@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var userEmail = prompt("이메일 주소를 입력하세요. : ", "");
+        var arrUrl = [".co.kr",".com", ".net", ".or.kr", ".go.kr"];
+
+        var check1 = false; // 아이디에 @가 있는지 체크
+        var check2 = false; // 도메인에 arrUrl이 있는지 체크
+
+        if(userEmail.indexOf("@")>0) { // @ 존재하면 해당 인덱스 값 반환
+            check1 = true;
+            for(var i=0;i<arrUrl.length;i++) {
+                if(userEmail.indexOf(arrUrl[i]) > 0) { // 도메인 존재하면 해당 인덱스 값 반환
+                    check2 = true;
+                    break; // for문 탈출
+                }
+            }
+        } else { // @가 없으면 -1 반환
+            document.write("이메일 형식이 올바르지 않습니다.");
+        }
+
+        if(check1 && check2) {
+            document.write("올바른 이메일 형식입니다.", "<br>");
+            document.write(userEmail);
+        } else {
+            document.write("이메일 형식이 올바르지 않습니다.");
+        }
+    </script>
+</body>
+</html>

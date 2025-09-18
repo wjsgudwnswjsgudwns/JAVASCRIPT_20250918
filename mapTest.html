@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let map1 = new Map(); // Map 객체 생성
+        map1.set("name","홍길동"); 
+        map1.set("age", 27);
+
+        console.log(map1.get("name")); // "홍길동"
+
+        for(let [key,value] of map1) {
+            console.log(key,value);
+        }
+
+        const contry = ["영어", "중국어"];
+        const subjects = ["쓰기", "말하기"];
+        const myMap = new Map();
+
+        for(let i=0;i<contry.length;i++) {
+            myMap.set(contry[i], []);
+            for(let k=0;k<subjects.length;k++) {
+                myMap.get(contry[i]).push(prompt(`${contry[i]}에 ${subjects[k]} 점수는?`));
+            }
+        }
+
+        console.log(myMap.get("영어"));
+        console.log(myMap.get("중국어"));
+
+    </script>
+</body>
+</html>

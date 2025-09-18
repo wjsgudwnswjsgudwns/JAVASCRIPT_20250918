@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [10,20,30];
+        let arr2 = arr.map(num => num/10); // 원본의 배열을 활용하여 새로운 배열을 만들어냄. 원본 변화 없음
+        console.log(arr2);
+
+        let strArr = ["abc", "def", "efg"];
+        let strArr2 = strArr.map(str => str.toUpperCase());
+        console.log(strArr2);
+
+        let numbers = [10,20,30]
+        let numbers2 = numbers.map((value, idx) => value+idx);
+        console.log(numbers2);
+
+        // 하나라도 만족을 하면 true, 모두 거짓이면 false (some)
+        let strArr3 = ["kor", "jap", "usa"];
+        let kor = strArr.some(nation => nation === "kor"); // true
+
+        // 하나라도 만족하지 않으면 false, 모두 만족하면 true (every)
+
+        // 특정 값이 있으면 true, 없으면 false (includes)
+        
+
+    </script>
+</body>
+</html>
