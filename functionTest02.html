@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num =1 ;
+        function gallery(direct) {
+            if(direct) {
+                if (num == 3) return;
+                num++;
+            } else {
+                if (num == 1) return;
+                num--;
+            }
+            var imgTag = document.getElementById("photo");
+            imgTag.setAttribute("src", "images/math_img_" + num + ".jpg");
+        }
+
+        // 재귀함수(팩토리얼 함수)
+        function factorial() {
+            if(n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * factorial(n-1);
+            }
+        }
+        factorial(5);
+
+    </script>
+    <div>
+        <p>
+            <img src="images/math_img_1.jpg" id="photo">
+        </p>
+        <p>
+            <button onclick="gallery(0)">이전</button>
+            <button onclick="gallery(1)">다음</button>
+        </p>
+    </div>
+
+</body>
+</html>
