@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //동기 방식
+        console.log("작업 A 시작");
+        console.log("작업 B 시작");
+        console.log("작업 C 시작");
+
+        //비동기 방식
+        console.log("작업 A 시작");
+        setTimeout(() => { // 전 단계 작업완료를 기다리지 않고 2초 후에 코드를 바로 실행
+            console.log("작업 B 시작");
+        }, 2 * 1000);
+        console.log("작업 C 시작");
+
+        //비동기 방식 -> 콜백 지옥 (Callback Hell)
+        setTimeout(() => {
+            console.log("1초후 실행 A"); 
+            setTimeout(() => {
+                console.log("1초후 실행 B"); 
+                setTimeout(() => {
+                    console.log("1초후 실행 C"); 
+                }, 1*1000);
+            }, 1*1000);
+        }, 1*1000);
+
+        async function asyncFunction() {
+            console.log("1번 작업");
+            await new Promise((resolve) => setTimeout(resolve, 2000)); //2초 대기
+            console.log("2번 작업");
+        }
+        asyncFunction();
+        console.log("3번 작업");
+
+    </script>
+</body>
+</html>
