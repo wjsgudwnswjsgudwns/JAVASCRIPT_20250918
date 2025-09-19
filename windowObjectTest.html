@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var osInfo = navigator.userAgent.toLocaleLowerCase;
+        console.log(osInfo);
+        console.log(screen.width, screen.height);
+        console.log(location.href);
+        function goNaver() {
+            location.href="https://naver.com"
+        }
+        function goBack() {
+            history.back();
+        }
+        function goFoward() {
+            history.forward();
+        }
+        console.log("브라우저 이름 : " + navigator.appName);
+        console.log("브라우저 언어 : " + navigator.language);
+        console.log("브라우저 플랫폼 : " + navigator.platform);
+    </script>
+    <button onclick="goNaver()">네이버</button>
+    <button onclick="goBack()">뒤로</button>
+    <button onclick="goFoward()">앞으로</button>
+</body>
+</html>
