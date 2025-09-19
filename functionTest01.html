@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum1(a,b) {
+            document.write("a + b = " + (a+b) + "<br>");
+        }
+        sum1(10,20);
+
+        function sum2() {
+            document.write(arguments[0]+arguments[1]+ "<br>");
+        }
+        sum2(10,20);
+
+        function sum3() {
+            var sum=0;
+            for(var i=0;i<arguments.length;i++) {
+                sum += arguments[i];
+            }
+            document.write("sum3 : " + sum + "<br>");
+        }
+        sum3(10,20,30,40);
+        sum3(10,20,30,40,50);
+        sum3(10,20,30,40,50,60);
+
+    </script>
+</body>
+</html>
