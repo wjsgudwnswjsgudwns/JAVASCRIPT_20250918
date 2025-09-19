@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = "https://example.com/board/list?name=은쿤쿠";
+        console.log(encodeURI(url)); // 특수 기호를 제외한 한글만 인코딩
+        console.log(encodeURIComponent(url)); // 특수기호를 포함하여 인코딩
+
+        let urlencode = encodeURI(url);
+        console.log(decodeURI(urlencode));
+        console.log(decodeURIComponent(urlencode));
+
+    </script>
+</body>
+</html>
