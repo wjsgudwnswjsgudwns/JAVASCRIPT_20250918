@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Ajax </title>
+<script src="../js/jquery.js"></script>
+<script>
+$(function() {
+	 $.ajax({
+      url :  "https://jsonplaceholder.typicode.com/posts/",
+      dataType : "json",
+      success:function(data) { 
+        if(data.length>0){ // null 값 방지
+          var tb = $("<table />"); // 테이블 태그 선언
+          for(var i in data) { // i -> index, 0~99
+			var $userId = data[i].userId 
+            var $id = data[i].id; 
+            var $title = data[i].title 
+            var $body = data[i].body 
+
+            var row = $("<tr />").append(
+            	$("<td />").text($userId),  
+				$("<td />").text($id),
+              	$("<td />").text($title),
+              	$("<td />").text($body)
+            );
+            tb.append(row); // 테이블 태그에 <tr> 태그 넣기
+          }
+          $(".wrap").append(tb);
+        }
+      }
+    });
+});
+</script>
+</head>
+<body>
+	<div class="wrap"></div>
+</body>
+</html>
