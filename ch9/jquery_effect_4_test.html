@@ -3,10 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title> 효과와 애니메이션 </title>  
-<script src="js/jquery.js"></script>
+<script src="../js/jquery.js"></script>
 <script>
 $(function(){
-	
+	$(".txt1")
+		.animate({marginLeft:"300px"},1*1000) // 오른쪽
+		.animate({marginTop:"300px"},1*1000) // 아래쪽
+		.queue(function(){ // 작업을 대기열에 등록
+			$(this).css("background-color", "red"); // 빨간색으로 바뀐뒤에 멈춤 -> 작업이 끝나면 그대로 종료
+			$(this).dequeue(); // 다시 움직임 -> 다음 작업을 실행시켜줌
+		})
+		.animate({marginLeft:"0px"},1*1000) // 왼쪽
+		.animate({marginTop:"0px"},1*1000) // 위쪽
 });
 </script>
 <style>
