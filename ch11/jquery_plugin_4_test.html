@@ -25,17 +25,31 @@
 		cursor:pointer;
 	}
 </style>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.cookie.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.cookie.js"></script>
 <script>
 $(function() {
+	if($.cookie("popup") == "none") {
+		$("#notice_wrap").hide( );
+	}
 
+	var $expChk = $("#expiresChk");
+	$(".closeBtn").on("click", closePop);
+
+	function closePop() {
+		if($expChk.is(":checked")) { // 체크 박스 체크 여부
+			$.cookie("popup", "none", {expires:3, path:"/"});
+			// popup 이름으로 cookie 생성, 유효기간이 3일로 설정
+		}
+
+		$("#notice_wrap").fadeOut("fast");
+	};
 });
 </script>
 </head>
 <body>
 	<div id="notice_wrap">
-		<img src="images/window_object_1.jpg" alt="공지사항">
+		<img src="../images/window_object_1.jpg" alt="공지사항">
 		<p class="closeWrap">
 			<input type="checkbox" name="expiresChk" id="expiresChk">
 			<label for="expiresChk">3일 동안 이 창 열지않기</label>
